@@ -1,0 +1,21 @@
+text,label
+"Congratulations! You have won a $1000 Walmart gift card. Click here to claim now.",spam
+"Dear user, your account has been selected for a free prize. Act fast!",spam
+"Limited time offer! Buy one get one free. Hurry up!",spam
+"Earn money from home without investment. Register today!",spam
+"You have been pre-approved for a loan. Apply immediately.",spam
+"Reminder: Your electricity bill is due tomorrow.",ham
+"Hi Veer, can we reschedule the meeting to 3 PM?",ham
+"Please find attached the project report.",ham
+"Happy birthday! Wishing you a wonderful year ahead.",ham
+"Let's have lunch tomorrow at the cafeteria.",ham
+"Your Amazon order has been shipped successfully.",ham
+"Important update regarding your exam schedule.",ham
+"Click this link to verify your bank account urgently.",spam
+"You are selected for a cash reward. Claim now!",spam
+"Meeting minutes from today's discussion are attached.",ham
+"Your OTP for login is 482193. Do not share it.",ham
+"Free cryptocurrency giveaway! Join now!",spam
+"Final reminder: Complete your KYC immediately.",spam
+"Thanks for your payment. Receipt attached.",ham
+"Can you send me the assignment file?",ham
