@@ -9,17 +9,21 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-    - uses: actions/setup-python@v4
+    - name: Setup Python
+      uses: actions/setup-python@v4
       with:
         python-version: '3.10'
+
+    - name: Verify files
+      run: dir
 
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install -r requirements.txt
+        python -m pip install pandas numpy scikit-learn joblib
 
     - name: Run Training
-      working-directory: .
-      run: python ./src/train_backend.py
+      run: python src/train_backend.py
