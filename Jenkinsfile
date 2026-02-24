@@ -5,27 +5,27 @@ pipeline {
 
         stage('Checkout') {
             steps {
-                checkout scm
+                git 'https://github.com/veerxx7/mailspam.git'
             }
         }
 
-        stage('Install Dependencies') {
+        stage('Build Docker Image') {
             steps {
-                bat '"C:\\Users\\veers\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install --upgrade pip'
-                bat '"C:\\Users\\veers\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" -m pip install -r requirements.txt'
+                bat 'docker build -t mailspam-api .'
             }
         }
 
-        stage('Train Model') {
+        stage('Run Container Test') {
             steps {
-                bat '"C:\\Users\\veers\\AppData\\Local\\Programs\\Python\\Python313\\python.exe" src\\train_backend.py'
+                bat 'docker run -d -p 8000:8000 --name mailspam-test mailspam-api'
             }
         }
-    }
 
-    post {
-        success {
-            archiveArtifacts artifacts: '*.pkl', fingerprint: true
+        stage('Stop Test Container') {
+            steps {
+                bat 'docker stop mailspam-test'
+                bat 'docker rm mailspam-test'
+            }
         }
     }
 }

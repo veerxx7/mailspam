@@ -32,4 +32,4 @@ jobs:
       run: python -c "import pandas; import sklearn; print('Dependencies OK')"
 
     - name: Run Training Script
-      run: python src/train_backend.py
+      run: python src/train_backend.pygit add .
