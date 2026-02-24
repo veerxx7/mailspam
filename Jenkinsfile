@@ -3,12 +3,6 @@ pipeline {
 
     stages {
 
-        stage('Checkout') {
-            steps {
-                git 'https://github.com/veerxx7/mailspam.git'
-            }
-        }
-
         stage('Build Docker Image') {
             steps {
                 bat 'docker build -t mailspam-api .'
